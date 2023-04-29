@@ -5,7 +5,6 @@ require "minitest/reporters"
 Minitest::Reporters.use!
 
 class ActiveSupport::TestCase
-  include ApplicationHelper
   # 指定のワーカー数でテストを並列実行する
   parallelize(workers: :number_of_processors)
   # test/fixtures/*.ymlのfixtureをすべてセットアップする
@@ -20,8 +19,6 @@ class ActiveSupport::TestCase
   def log_in_as(user)
     session[:user_id] = user.id
   end
-
-
 end
 
 class ActionDispatch::IntegrationTest
