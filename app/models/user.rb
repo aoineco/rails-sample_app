@@ -40,7 +40,6 @@ class User < ApplicationRecord
     remember_digest || remember
   end
 
-  # ユーザーのログイン情報を破棄する
   def forget
     update_attribute(:remember_digest, nil)
   end
